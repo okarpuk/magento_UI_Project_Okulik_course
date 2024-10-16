@@ -17,4 +17,3 @@ def driver():
 @pytest.fixture()
 def create_account_page(driver):
     return CreateAccount(driver)
-
