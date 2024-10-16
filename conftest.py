@@ -18,4 +18,3 @@ def driver():
 def create_account_page(driver):
     return CreateAccount(driver)
 
-
