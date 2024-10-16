@@ -14,7 +14,6 @@ def driver():
     chrome_driver = webdriver.Chrome(options=options)
     return chrome_driver
 
-
 @pytest.fixture()
 def create_account_page(driver):
     return CreateAccount(driver)
