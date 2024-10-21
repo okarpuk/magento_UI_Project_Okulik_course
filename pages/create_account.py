@@ -25,9 +25,9 @@ class CreateAccount(BasePage):
         assert current_page_url == "https://magento.softwaretestingboard.com/customer/account/", "Invalid URL"
 
     def check_empty_last_name_error(self):
-        last_name_error = self.driver.find_element(*last_name_empty_error_loc)
+        last_name_error = self.driver.find_element(*loc.last_name_empty_error_loc)
         assert last_name_error.text == "This is a required field.", "Last name field should be required"
 
     def check_js_injection_error(self):
-        js_injection_error = self.driver.find_element(*js_injection_error_loc)
+        js_injection_error = self.driver.find_element(*loc.js_injection_error_loc)
         assert js_injection_error.text == "First Name is not valid! Last Name is not valid!", "JS injection can't be entered"

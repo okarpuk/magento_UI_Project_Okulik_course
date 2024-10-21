@@ -1,6 +1,8 @@
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from pages.create_account import CreateAccount
+from pages.eco_friendly import EcoFriendly
+
 
 import pytest
 
@@ -17,3 +19,8 @@ def driver():
 @pytest.fixture()
 def create_account_page(driver):
     return CreateAccount(driver)
+
+@pytest.fixture()
+def eco_friendly_page(driver):
+    return EcoFriendly(driver)
+

@@ -1,12 +1,19 @@
 from pages.base_page import BasePage
 from pages.locators import eco_friendly_locators as loc
+from selenium.webdriver.common.action_chains import ActionChains
+
+from pages.locators.eco_friendly_locators import selected_product
 
 
 class EcoFriendly(BasePage):
     page_url = '/collections/eco-friendly.html'
 
-    def fill_create_account_form(self, first_name, last_name, email, password, confirm_password):
-        first_name_field = self.find_element(loc.first_name_field_loc)
+    def get_one_of_products(self, product_index):
+        products_list = self.find_element(loc.products_list_loc)
+        selected_product = products_list[product_index]
+        return selected_product
 
-
+    def add_product_to_wish_list(self):
+        (ActionChains(self.driver).move_to_element(selected_product).
+         move_to_element(loc.add_to_wish_list_button_loc).click(loc.add_to_wish_list_button_loc).perform())
 
