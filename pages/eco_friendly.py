@@ -19,4 +19,25 @@ class EcoFriendly(BasePage):
         ActionChains(self.driver).move_to_element(selected_product).move_to_element(add_to_wish_list_button).click().perform()
 
 
+    def check_products_by_40_50_price_range(self):
+        self.driver.execute_script("window.scrollBy(0, 2000);")
+        price_button = self.find_element(loc.price_button_loc)
+        price_range_40_50 = self.find_element(loc.price_range_40_50_loc)
+        price_button.click()
+        price_range_40_50.click()
+        products_list = self.find_all_elements(loc.products_list_loc)
+        for product in products_list:
+            price_element = product.find_element(By.XPATH, './/span[@class="price"]')
+            price_text = price_element.text
+            price_float = float(price_text.replace('$', '').strip())
+            assert 40.00 <= price_float <= 49.99, f"Price {price_float} not in range"
 
+
+
+
+
+
+    # def check_customer_login_page_name(self):
+    #     customer_login_page_name = self.driver.find_element(*loc.customer_login_page_name_loc)
+    #     assert customer_login_page_name.text == "Customer Login",\
+    #         f"The page name - {customer_login_page_name.text} is invalid"
