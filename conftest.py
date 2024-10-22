@@ -28,7 +28,9 @@ def eco_friendly_page(driver):
 def customer_login_page(driver):
     return CustomerLogin(driver)
 
-
+@pytest.fixture()
+def sale_page(driver):
+    return Sale(driver)
 
 
 
