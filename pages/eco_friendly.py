@@ -17,3 +17,6 @@ class EcoFriendly(BasePage):
         self.driver.execute_script("window.scrollBy(0, 400);")
         add_to_wish_list_button = selected_product.find_element(By.XPATH, './/a[@class="action towishlist" and @title="Add to Wish List" and @role="button"]')
         ActionChains(self.driver).move_to_element(selected_product).move_to_element(add_to_wish_list_button).click().perform()
+
+
+

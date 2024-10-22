@@ -31,8 +31,8 @@ def test_empty_last_name(create_account_page):
 def test_send_js_script_in_first_and_last_name(create_account_page):
     create_account_page.open_page()
     create_account_page.fill_create_account_form(
-        '<script>alert("Ваш сайт уязвим к XSS!");</script>',
-        '<script>alert("Ваш сайт уязвим к XSS!");</script>',
+        '<script>alert("XSS injection!!!");</script>',
+        '<script>alert("XSS injection!!!");</script>',
         fake.email(),
         'pa$$w0rd',
         'pa$$w0rd'
