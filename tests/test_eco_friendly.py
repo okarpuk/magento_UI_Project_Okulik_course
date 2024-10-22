@@ -32,4 +32,3 @@ def test_add_product_to_cart_and_check_name_and_price(eco_friendly_page):
 
     # sleep(5)
 
-
