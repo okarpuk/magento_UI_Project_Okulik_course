@@ -61,19 +61,3 @@ class EcoFriendly(BasePage):
         product_price_in_cart = self.find_element(loc.product_price_in_cart_loc)
         product_price_in_cart_text = product_price_in_cart.text
         assert self.product_price_text == product_price_in_cart_text, "The product names do not match"
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

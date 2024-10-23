@@ -1,7 +1,8 @@
 from selenium.webdriver.common.by import By
 
 
-empty_cart_icon_loc = (By.XPATH, '//div[@data-block="minicart"]')
-empty_cart_message_loc = (By.XPATH, '//div[@id="minicart-content-wrapper"]')
-bags_link_loc = (By.XPATH, '//span[normalize-space()="Bags"]')
+cart_icon_loc = (By.XPATH, '//a[@class="action showcart"]')
+empty_cart_message_loc = (By.XPATH, '//strong[@class="subtitle empty"]')
+search_field_loc = (By.XPATH, '//input[@id="search"]')
+search_button_loc = (By.XPATH, '//button[@title="Search"]')
 mens_bargains_banner_loc = (By.XPATH, '//a[@class="block-promo sale-mens"]')
