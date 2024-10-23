@@ -7,5 +7,4 @@ class MenSale(BasePage):
 
     def check_men_sale_page_name(self):
         men_sale_page_name = self.find_element(loc.men_sale_page_name_loc)
-        assert men_sale_page_name.text == "Men Sale",\
-            f"The page name - {men_sale_page_name.text} is invalid"
+        assert men_sale_page_name.text == "Men Sale", f"The page name - {men_sale_page_name.text} is invalid"

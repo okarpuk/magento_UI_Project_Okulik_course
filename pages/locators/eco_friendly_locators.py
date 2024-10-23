@@ -10,7 +10,3 @@ add_to_cart_button_loc = (By.XPATH, '//button[@title="Add to Cart"]')
 cart_button_loc = (By.XPATH, '//a[@class="action showcart"]')
 product_name_in_cart_loc = (By.XPATH, '//strong[@class="product-item-name"]')
 product_price_in_cart_loc = (By.XPATH, '//div[@class="price-container"]')
-
-
-
-

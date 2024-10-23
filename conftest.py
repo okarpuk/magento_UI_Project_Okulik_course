@@ -1,5 +1,8 @@
+import pytest
+
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
+
 from pages.create_account import CreateAccount
 from pages.eco_friendly import EcoFriendly
 from pages.customer_login import CustomerLogin
@@ -7,15 +10,11 @@ from pages.men_sale import MenSale
 from pages.sale import Sale
 from pages.search_result import SearchResult
 
-import pytest
-
 
 @pytest.fixture()
 def driver():
     options = Options()
-    options.add_argument("--headless")
-    # options.add_argument('--no-sandbox')
-    # options.add_argument('--disable-dev-shm-usage')
+    # options.add_argument("--headless")
     chrome_driver = webdriver.Chrome(options=options)
     chrome_driver.maximize_window()
     return chrome_driver
