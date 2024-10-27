@@ -10,9 +10,10 @@ class Sale(BasePage):
         cart_icon = self.find_element(loc.cart_icon_loc)
         cart_icon.click()
 
-    def check_empty_cart_message(self):
+    def check_empty_cart_message(self, expected_error_text):
         empty_cart_message = self.find_element(loc.empty_cart_message_loc)
-        assert empty_cart_message.text == "You have no items in your shopping cart.", "Empty cart message incorrect"
+        assert empty_cart_message.text == expected_error_text, "Empty cart message incorrect"
+
 
     def find_product_by_search(self, product_name):
         search_field = self.find_element(loc.search_field_loc)

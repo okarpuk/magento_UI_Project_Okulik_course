@@ -21,14 +21,11 @@ class CreateAccount(BasePage):
         self.driver.execute_script("window.scrollBy(0, 2000);")
         create_account_button.click()
 
-    def check_current_url(self):
-        current_page_url = self.driver.current_url
-        assert current_page_url == "https://magento.softwaretestingboard.com/customer/account/", "Invalid URL"
-
-    def check_empty_last_name_error(self):
+    def check_empty_last_name_error(self, expected_error_text):
         last_name_error = self.find_element(loc.last_name_empty_error_loc)
-        assert last_name_error.text == "This is a required field.", "Last name field should be required"
+        assert last_name_error.text == expected_error_text, \
+            f"Expected error text: {expected_error_text}, but got: {last_name_error.text}"
 
-    def check_js_injection_error(self):
+    def check_js_injection_error(self, expected_error_text):
         js_injection_error = self.find_element(loc.js_injection_error_loc)
-        assert js_injection_error.text == "First Name is not valid! Last Name is not valid!", "JS injection can't be entered"
+        assert js_injection_error.text == expected_error_text, "JS injection can't be entered"

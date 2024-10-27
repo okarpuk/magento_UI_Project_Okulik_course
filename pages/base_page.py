@@ -20,3 +20,7 @@ class BasePage:
 
     def find_all_elements(self, locator: tuple):
         return self.driver.find_elements(*locator)
+
+    def check_current_url(self, expected_url):
+        current_page_url = self.driver.current_url
+        assert current_page_url == expected_url, f"Expected URL: {expected_url}, but got: {current_page_url}"

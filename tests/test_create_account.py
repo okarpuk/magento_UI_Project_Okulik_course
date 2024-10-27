@@ -15,7 +15,7 @@ def test_create_valid_account(create_account_page):
         'pa$$w0rd',
         'pa$$w0rd'
     )
-    create_account_page.check_current_url()
+    create_account_page.check_current_url("https://magento.softwaretestingboard.com/customer/account/")
 
 
 @pytest.mark.smoke
@@ -28,7 +28,7 @@ def test_empty_last_name(create_account_page):
         'pa$$w0rd',
         'pa$$w0rd'
     )
-    create_account_page.check_empty_last_name_error()
+    create_account_page.check_empty_last_name_error("This is a required field.")
 
 
 @pytest.mark.smoke
@@ -41,4 +41,4 @@ def test_send_js_script_in_first_and_last_name(create_account_page):
         'pa$$w0rd',
         'pa$$w0rd'
     )
-    create_account_page.check_js_injection_error()
+    create_account_page.check_js_injection_error("First Name is not valid! Last Name is not valid!")

@@ -5,7 +5,7 @@ import pytest
 def test_check_empty_cart_message(sale_page):
     sale_page.open_page()
     sale_page.click_on_cart_icon()
-    sale_page.check_empty_cart_message()
+    sale_page.check_empty_cart_message("You have no items in your shopping cart.")
 
 
 @pytest.mark.smoke
