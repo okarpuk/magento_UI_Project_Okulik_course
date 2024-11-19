@@ -14,7 +14,7 @@ from pages.search_result import SearchResult
 @pytest.fixture()
 def driver():
     options = Options()
-    # options.add_argument("--headless")
+    options.add_argument("--headless")
     chrome_driver = webdriver.Chrome(options=options)
     chrome_driver.maximize_window()
     return chrome_driver
