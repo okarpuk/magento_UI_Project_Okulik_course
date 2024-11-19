@@ -1,5 +1,5 @@
 1. FROM python
-2. RUN git clone https://github.com/user_name/repository_address.git
+2. RUN git clone https://github.com/okarpuk/magento_ui_project_Okulik_course
 3. ENV COOL_PORT 8080
 4. ENV COOL_IP 0.0.0.0
 5. RUN mkdir logs
