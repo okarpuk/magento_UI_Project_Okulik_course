@@ -18,7 +18,7 @@ def test_create_valid_account(create_account_page):
     create_account_page.check_current_url("https://magento.softwaretestingboard.com/customer/account/")
 
 
-@pytest.mark.smoke
+@pytest.mark.regression
 def test_empty_last_name(create_account_page):
     create_account_page.open_page()
     create_account_page.fill_create_account_form(
@@ -31,7 +31,7 @@ def test_empty_last_name(create_account_page):
     create_account_page.check_empty_last_name_error("This is a required field.")
 
 
-@pytest.mark.smoke
+@pytest.mark.extended
 def test_send_js_script_in_first_and_last_name(create_account_page):
     create_account_page.open_page()
     create_account_page.fill_create_account_form(
