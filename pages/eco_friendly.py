@@ -12,7 +12,6 @@ class EcoFriendly(BasePage):
     product_name_text = None
     product_price_text = None
 
-
     def get_one_of_products(self, product_index):
         products_list = self.find_all_elements(loc.products_list_loc)
         return products_list[product_index]
@@ -20,7 +19,7 @@ class EcoFriendly(BasePage):
     def add_product_to_wish_list(self, selected_product):
         self.driver.execute_script("window.scrollBy(0, 400);")
         add_to_wish_list_button = (selected_product.find_element
-                                   (By.XPATH,'.//a[@class="action towishlist" '
+                                   (By.XPATH, './/a[@class="action towishlist" '
                                              'and @title="Add to Wish List" and @role="button"]')
                                    )
         (ActionChains(self.driver).
@@ -46,8 +45,8 @@ class EcoFriendly(BasePage):
         self.driver.execute_script("window.scrollBy(0, 600);")
         product_name = selected_product.find_element(By.XPATH, '//a[@class="product-item-link"]')
         product_price = selected_product.find_element(By.XPATH, '//span[@class="price"]')
-        choose_size_button =self.find_element(loc.choose_size_button_loc)
-        choose_color_button =self.find_element(loc.choose_color_button_loc)
+        choose_size_button = self.find_element(loc.choose_size_button_loc)
+        choose_color_button = self.find_element(loc.choose_color_button_loc)
         add_to_cart_button = self.find_element(loc.add_to_cart_button_loc)
         self.product_name_text = product_name.text
         self.product_price_text = product_price.text
